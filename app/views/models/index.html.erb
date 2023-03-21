@@ -19,7 +19,7 @@
 		    <div class="card">
 
     	    	<% if user_signed_in? %>
-    		    	<%= link_to destroy_path(model), style: "position: absolute; right: 0;", method: :delete, data: { confirm: "Are you sure?" } do %>
+    		    	<%= link_to destroy_path(model), style: "position: absolute; right: 0; z-index: 1000; margin: 10px;", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
     		    		<span class="delete hairline"></span>
     		    	<% end %>
     	    	<% end %>

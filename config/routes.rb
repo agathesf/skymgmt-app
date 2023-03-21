@@ -9,5 +9,5 @@ Rails.application.routes.draw do
 	# For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 		resources :models, only: [:index, :show, :new, :create, :update, :edit]
 	# end
-	delete '/models/:id', to: 'models#destroy', as: 'destroy'
+	delete 'models/:id', to: 'models#destroy', as: 'destroy'
 end
