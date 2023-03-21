@@ -1,0 +1,26 @@
+.wrapper {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    padding: 5px 0px;
+	display: flex;
+	overflow: hidden;
+	font-size: 10px;
+	width: 100vw;
+	color: black;
+	background-color: $light-gray;
+	z-index: 10000;
+}
+
+.text-head {
+	font-family: $my-font;
+	white-space: nowrap;
+	animation: scroll 5s infinite linear;
+	line-height: 12px;
+}
+
+@keyframes scroll {
+	100% {
+	transform: translateX(-100%);
+	}
+}

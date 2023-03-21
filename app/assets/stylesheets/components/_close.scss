@@ -1,0 +1,134 @@
+// @import "bourbon";
+
+.close {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    margin-top: -1px;
+    background: #000;
+  }
+  &::before {
+    // @include transform(rotate(45deg));
+    transform: rotate(40deg);
+    transition: transform .3s ease-in-out;
+  }
+  &::after {
+    // @include transform(rotate(-45deg));
+    transform: rotate(-40deg);
+    transition: transform .3s ease-in-out;
+  }
+  &:hover::before {
+    // @include transform(rotate(45deg));
+    transform: rotate(-40deg);
+  }
+  &:hover::after {
+    // @include transform(rotate(-45deg));
+    transform: rotate(40deg);
+  }
+  &.hairline {
+    &::before, &::after {
+      height: 1px;
+    }
+  }
+}
+
+.add {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  border: 1px solid black;
+  border-radius: 50%;
+  padding: 5px;
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    width: 80%;
+    top: 50%;
+    left: 10%;
+    background: #000;
+  }
+  &::before {
+    // @include transform(rotate(45deg));
+    transform: rotate(90deg);
+    transition: transform .3s ease-in-out;
+  }
+  &::after {
+    // @include transform(rotate(-45deg));
+    transform: rotate(-0deg);
+    transition: transform .3s ease-in-out;
+  }
+  &:hover::before {
+    // @include transform(rotate(45deg));
+    transform: rotate(270deg);
+  }
+  &:hover::after {
+    // @include transform(rotate(-45deg));
+    transform: rotate(180deg);
+  }
+  &.hairline {
+    &::before, &::after {
+      height: 1px;
+    }
+  }
+}
+
+.delete {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  z-index: 100;
+  float: right;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  margin: 10px;
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    margin-top: -1px;
+    background: white;
+  }
+  &::before {
+    // @include transform(rotate(45deg));
+    transform: rotate(40deg);
+    transition: transform .3s ease-in-out;
+  }
+  &::after {
+    // @include transform(rotate(-45deg));
+    transform: rotate(-40deg);
+    transition: transform .3s ease-in-out;
+  }
+  &:hover::before {
+    // @include transform(rotate(45deg));
+    transform: rotate(-40deg);
+  }
+  &:hover::after {
+    // @include transform(rotate(-45deg));
+    transform: rotate(40deg);
+  }
+  &.hairline {
+    &::before, &::after {
+      height: 1px;
+    }
+  }
+}

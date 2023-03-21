@@ -10,3 +10,59 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+html, h1, h2, p, a {
+	cursor: none;
+	font-weight: 300;
+}
+
+body {
+	background-color: $light-gray;
+}
+
+body::-webkit-scrollbar, div::-webkit-scrollbar {
+  display: none;
+}
+
+h2 {
+	font-family: $font-logo;
+	letter-spacing: 1px;
+	text-transform: none;
+}
+
+p {
+	margin-bottom: 0px;
+}
+
+$a-tags: 'a, a:active, a:hover, a:visited';
+$a-tags-hover: 'a:active, a:hover';
+
+a {
+	text-decoration: none !important;
+	color: white;
+	&:hover {
+		text-decoration: none !important;
+		color: white;
+	}
+	&:visited {
+		text-decoration: none !important;	
+		color: white;
+	}
+	&:active {
+		text-decoration: none !important;	
+		color: white;	
+	}
+}
+
+.back {
+	text-align: end;
+    position: fixed;
+    right: 10px;
+    z-index: 100;
+}
+
+.back a {
+	color: black;
+	font-family: $my-font;
+	font-size: 30px;
+}

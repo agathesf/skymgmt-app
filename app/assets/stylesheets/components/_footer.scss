@@ -1,0 +1,27 @@
+.wrapper-foot {
+    position: fixed;
+    left: 0px;
+    bottom: 0;
+    padding: 6px 0;
+    display: flex;
+    overflow: hidden;
+    font-size: 10px;
+    width: 100vw;
+    height: 20px;
+    color: black;
+    background-color: $light-gray;
+}
+
+.text-foot {
+	font-family: $my-font;
+	white-space: nowrap;
+	animation: scrollback 5s infinite linear;
+	line-height: 12px;
+	transform: translateX(-100%);
+}
+
+@keyframes scrollback {
+	100% {
+	transform: translateX(0%);
+	}
+}

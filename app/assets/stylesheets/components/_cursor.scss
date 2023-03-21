@@ -1,0 +1,39 @@
+/*_____________CURSOR______________*/
+
+.cursor-dot,
+.cursor-dot-outline {
+    z-index: 10000;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease-in-out,
+                transform 0.3s ease-in-out;
+}
+
+.cursor-dot {
+    width: 25px;
+    height: 25px;
+    background-color: rgba(233, 233, 237, 0.3);
+    border: 1px solid rgba(44, 65, 100, 1);
+}
+
+.cursor-dot-outline {
+    width: 25px;
+    height: 25px;
+    background-color: rgba(71, 102, 152, 0);
+    border: 1px solid rgba(44, 65, 100, 0);
+}
+
+@media screen and (min-width: 720px) and (max-width: 1200px) {
+}
+
+@media screen and (max-width: 720px) {
+    .cursor-dot,
+    .cursor-dot-outline {
+        display: none;
+    }
+}

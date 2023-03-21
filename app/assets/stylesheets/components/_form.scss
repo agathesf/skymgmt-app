@@ -1,0 +1,200 @@
+label {
+	font-family: $my-font;
+	font-size: 12px;
+	text-transform: uppercase;
+}
+
+input::placeholder, textarea::placeholder {
+	font-family: $my-font;
+	font-size: 12px;
+	text-transform: uppercase;
+}
+
+input:focus::placeholder, textarea:focus::placeholder {
+	opacity: 0.2;
+}
+
+input {
+	font-family: $my-font;
+	font-size: 12px;
+	// text-transform: uppercase;
+}
+
+.form-control {
+    	background-color: transparent;
+    	border: 0px solid transparent;
+    	border-radius: 0px;
+    	border-bottom: 1px solid black;
+    	&:focus {
+    		background-color: transparent;
+    		border: 0px solid transparent;
+    		box-shadow: none;
+    		border-bottom: 1px solid black;
+    	}
+}
+
+.new_model, .edit_model {
+	padding: 90px 270px;
+    display: flex;
+    &.form-control {
+    	background-color: transparent;
+    }
+    & h3 {
+    	font-family: $font-logo;
+    	    margin-top: 30px;
+    }
+}
+
+.form-side {
+	width: 50%;
+}
+
+.form-left {
+	padding: 0 50px 0 0;
+}
+
+.model_age {
+	display: flex;
+	flex-direction: row-reverse;
+	padding: 0 30px 0 0;
+	& label {
+		line-height: 41px;
+	}
+}
+
+
+.category-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.category-item {
+}
+
+.category-selector {
+  position: absolute;
+  transform: scale(0);
+}
+
+.category-selector + label {
+  border: 1px black solid;
+  border-radius: 50px;
+  opacity: .4;
+  line-height: 41px;
+  padding: 0px 10px;
+      width: 100%;
+    text-align: center;
+}
+
+.category-selector:checked + label {
+  opacity: 1 !important;
+}
+
+.mesures {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-gap: 10px;
+}
+
+.carateristics {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 10px;
+}
+
+.model_height, .model_chest, .model_waist, .model_hips {
+	display: flex;
+	flex-direction: row-reverse;
+	& label {
+		padding: 10px 0 0 0;
+	}
+}
+
+.validate-model-btn {
+	margin-top: 30px;
+	color: $light-gray;
+	background-color: black;
+	width: 100%;
+	float: right;
+	text-transform: uppercase;
+}
+
+.validate-model-btn:hover {
+	color: black;
+	background-color: $light-gray;
+	border-bottom: 1px solid black;
+}
+
+
+///////// RESPONSIVE //////////
+
+@media screen and (min-width: 720px) and (max-width: 1200px) {
+	.new_model, .edit_model {
+		padding: 90px 120px;
+	    display: block;
+	}
+	.form-side {
+    	width: 100%;
+	}
+	.validate-model-btn {
+		width: 30%;
+	}
+}
+
+@media screen and (max-width: 720px) {
+	.new_model, .edit_model {
+		padding: 20px 20px;
+	    display: block;
+	}
+	.form-side {
+    	width: 100%;
+	}
+	.form-left {
+		padding: 0 0px 0 0;
+	}
+	.validate-model-btn {
+		margin-bottom: 50px;
+	}
+	.mesures {
+		grid-template-columns: 1fr 1fr;
+	}
+	.carateristics {
+		display: block;
+	}
+}
+
+.new_user {
+	padding: 90px 500px;
+    &.form-control {
+    	background-color: transparent;
+    }
+    & h3 {
+    	font-family: $font-logo;
+    	    margin-top: 30px;
+    }
+}
+
+input#file-upload-button {
+	background-color: blue;
+	font-size: 30px;
+}
+
+.preview {
+	overflow: scroll !important;
+}
+
+.preview ul {
+	list-style: none;
+    display: flex;
+    padding: 0;
+}
+
+li > img {
+	padding-right: 10px;
+	object-fit: contain;
+    max-height: 90px;
+}

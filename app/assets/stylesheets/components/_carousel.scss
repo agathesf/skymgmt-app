@@ -1,0 +1,87 @@
+.inline-show {
+	display: inline-flex;
+	font-family: $my-font;
+	font-size: 12px;
+	text-transform: uppercase;
+	margin: 0px;
+}
+
+.inline-show img {
+	padding: 0 5px;
+	height: 85vh;
+}
+
+.model-name {
+	transform: translate(-50%, -50%);
+	position: absolute;
+}
+
+.show-text {
+	padding: 100px 20px 0px 250px;
+	width: 700px;
+	display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.contact {
+	justify-content: start;
+    display: flex;
+    margin-right: 30px;
+}
+
+.carousel {
+	width: 550px;
+	max-width: 550px;
+    height: 85vh;
+    margin: 0 5px;
+}
+
+///////// RESPONSIVE //////////
+
+@media screen and (min-width: 720px) and (max-width: 1200px) {
+	.inline-show img {
+		padding: 0 5px;
+		height: 85vh;
+	}
+}
+
+@media screen and (max-width: 720px) {
+	div.back {
+		position: absolute;
+		padding: 20px;
+		& a {
+			position: absolute;
+		}
+	}
+	.show-text {
+	    padding: 45px 0px 0px 0px;
+	    width: 100%;
+    	text-align: justify;
+	    margin-bottom: 20px;
+	}
+	.model-name {
+		transform: translate(0%, -50%);
+	}
+	.info-show {
+		flex-direction: column;
+	}
+	.bottom {
+		display: flex;
+	}
+	.inline-show {
+		display: flex;
+		flex-direction: column; 
+		& img {
+			height: 100% !important;
+			width: 100% !important;
+			object-fit: cover;
+			padding: 5px 5px;
+		}
+	}
+	.column-wrapper {
+		display: block !important;
+		height: 100%;
+    	position: inherit !important;
+	}
+}

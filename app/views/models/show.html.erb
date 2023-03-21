@@ -45,9 +45,9 @@
 			     <div class="contact px-3">
 			     	<p></p>
 			     	<a href = "mailto: <%= @model.email %>" class="login">MAIL</a>
-			     	<a href="<%= @model.instagram %>" class= "login ml-3">INSTAGRAM</a>
+			     	<a href="<%= @model.instagram %>" class= "login ms-3">INSTAGRAM</a>
 			     	<% if user_signed_in? %>	     		
-				     	<%= link_to "EDIT",  edit_model_path(@model), class: "ml-3" %>
+				     	<%= link_to "EDIT",  edit_model_path(@model), class: "ms-3" %>
 			     	<% end %>
 			     </div>
 			</div>

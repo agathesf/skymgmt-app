@@ -1,5 +1,10 @@
 // Import Google fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syncopate&display=swap');
+
+// @import url('http://fonts.cdnfonts.com/css/berthold-akzidenz-grotesk-be-9');
+// @import url('http://fonts.cdnfonts.com/css/sansumi');
+
 
 // Define fonts for body and headers
 $body-font: "Work Sans", "Helvetica", "sans-serif";
@@ -14,3 +19,32 @@ $headers-font: "Nunito", "Helvetica", "sans-serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+
+@font-face {
+    font-family: 'FuturaClassicNormal';
+    src: url('FuturaClassicNormal.eot');
+    src: url('FuturaClassicNormal.eot?#iefix') format('embedded-opentype'),
+        url('FuturaClassicNormal.woff2') format('woff2'),
+        url('FuturaClassicNormal.woff') format('woff'),
+        url('FuturaClassicNormal.ttf') format('truetype'),
+        url('FuturaClassicNormal.svg#FuturaClassicNormal') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Akzidenz-Grotesk BQ';
+    src: url('AkzidenzGroteskBQ-LigExt.eot');
+    src: url('AkzidenzGroteskBQ-LigExt.eot?#iefix') format('embedded-opentype'),
+        url('AkzidenzGroteskBQ-LigExt.woff2') format('woff2'),
+        url('AkzidenzGroteskBQ-LigExt.woff') format('woff'),
+        url('AkzidenzGroteskBQ-LigExt.ttf') format('truetype'),
+        url('AkzidenzGroteskBQ-LigExt.svg#AkzidenzGroteskBQ-LigExt') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+$font-logo: 'FuturaClassicNormal';
+$my-font: "Akzidenz-Grotesk BQ", "Syncopate";
