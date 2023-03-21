@@ -1,0 +1,116 @@
+<!-- Full screen modal -->
+
+<div class="modal fade" id="aboutModalCenter" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+  	<div class="modal-content modal-content-about">
+  		<div class="modal-left">
+		  	<p class="py-2"><%= t 'global' %></p>
+		  	<p class="py-2">expert in &nbsp; &nbsp; management, consulting, casting, scouting <br> paris, londres, milan, new york</p>
+			<p class="py-2">we tell stories diffenrently</p>
+			<div class="ext-link py-4">
+				<!-- UPDATE MAILER -->
+				<a class= "login" href="mailto: contact@skymgmt.fr">CONTACT@SKYMGMT.FR</a>
+				<a class= "login" href="https://instagram.com/skymanagementagency?utm_medium=copy_link">@SKYMANAGEMENT</a>
+			</div>
+			<div class="asset">
+				<p class="py-2">MANAGEMENT</p>
+				<p class="py-2"><%= t 'management' %></p>
+				<p class="py-2">CASTING</p>
+				<p class="py-2"><%= t 'casting' %></p>
+			</div>
+		</div>
+		<div class="modal-right">
+			<div class="asset">
+				<p class="py-2">CONSULTING</p>
+				<p class="py-2"><%= t 'consulting' %></p>
+				<p class="py-2">SCOUTING</p>
+				<p class="py-2"><%= t 'scouting' %></p>
+			</div>
+
+			<% if user_signed_in? %>
+				<%= link_to "QUIT EDITOR", destroy_user_session_path, class: "login", style: "position: absolute; bottom: 0px; right:0px; " %>
+			<% else %>
+				<%= link_to "I'M A TEAM MEMBER", new_user_session_path, class: "login", style: "position: absolute; bottom: 20px; right:0px; " %>
+			<% end %>
+		</div>
+	</div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="indexModalCenter" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+  	<div class="modal-content">
+  		<p class="c0">new faces</p>
+	  	<div class="modal-content-index pb-2" style="text-transform: lowercase;">
+	  		<p class="c1">new faces</p>
+	  		<p class="c2 lowercase">name</p>
+	  		<p class="c3 lowercase">gender</p>
+	  		<p class="c4 lowercase">age</p>
+	  		<p class="c5 lowercase">based in</p>
+	  		<p class="c6 lowercase">type</p>
+	  	</div>
+	  	<div class="mb-5">
+		  	<% @models.each do |model| %>
+		  		<% if model.category == "new faces" %>
+		  			<%= link_to model_path(model), class: "modal-content-index-line py-2" do %>
+			  			<p class="c2"> <%= model.first_name%> <%= model.last_name %> 
+			  				<span class="c0"> 
+			  					(
+			  					<%= "F" if model.gender == "female" %> 
+			  					<%= "M" if model.gender == "male" %>
+			  					|
+			  					<%= model.age %>
+			  					)
+			  				</span>
+			  			</p>
+			  			<p class="c3"> 
+			  				<%= "F" if model.gender == "female" %> 
+			  				<%= "M" if model.gender == "male" %>
+			  			</p>
+			  			<p class="c4"> <%= model.age %></p>
+			  			<p class="c5"> <%= model.based_in %> </p>
+			  			<p class="c6"> <%= model.role %> </p>
+			  			<div class="img-absolute"><%= cl_image_tag model.photos.first.key if model.photos.first != nil %></div>
+			  		<% end %>
+			  	<% end %>
+		  	<% end %>
+	  	</div>
+	  	<p class="c0">talents</p>
+	  	<div class="modal-content-index pb-2">
+	  		<p class="c1">talents</p>
+	  		<p class="c2 lowercase">name</p>
+	  		<p class="c3 lowercase">gender</p>
+	  		<p class="c4 lowercase">age</p>
+	  		<p class="c5 lowercase">based in</p>
+	  		<p class="c6 lowercase">type</p>
+		</div>
+		<div class="mb-5">
+		  	<% @models.each do |model| %>
+	  	  		<% if model.category == "talents" %>
+	  		  		<%= link_to model_path(model), class: "modal-content-index-line py-2" do %>
+	  		  			<p class="c2"> <%= model.first_name%> <%= model.last_name %> 
+	  		  				<span class="c0"> 
+	  		  					(
+	  		  					<%= "F" if model.gender == "female" %> 
+	  		  					<%= "M" if model.gender == "male" %>
+	  		  					|
+	  		  					<%= model.age %>
+	  		  					)
+	  		  				</span>
+	  		  			</p>
+	  		  			<p class="c3"> 
+			  				<%= "F" if model.gender == "female" %> 
+			  				<%= "M" if model.gender == "male" %>
+			  			</p>
+			  			<p class="c4"> <%= model.age %></p>
+			  			<p class="c5"> <%= model.based_in %> </p>
+			  			<p class="c6"> <%= model.role %> </p>
+			  			<div class="img-absolute"><%= cl_image_tag model.photos.first.key if model.photos.first != nil %></div>
+	  		  		<% end %>
+		  	  	<% end %>
+			<% end %>
+		</div>
+	</div>
+  </div>
+</div>

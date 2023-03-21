@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root to: "pages#home"
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+	devise_for :users
+	devise_scope :user do
+	  get '/users/sign_out' => 'devise/sessions#destroy'
+	end
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+	# scope "(:locale)", locale: /en|fr/ do 
+		root to: 'models#index' 
+	# For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+		resources :models, only: [:index, :show, :new, :create, :update, :edit]
+	# end
+	delete '/models/:id', to: 'models#destroy', as: 'destroy'
 end

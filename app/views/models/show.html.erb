@@ -1,0 +1,64 @@
+<div class="container">
+	<div class="back">
+		<%= link_to models_path, class: "back" do %>
+			<span class="close hairline"></span>
+		<% end %>
+	</div>
+
+	<div class="column-wrapper d-flex align-items-center" style="height: 100vh; position: absolute; top: 0; left: 0;">
+
+		<div class="inline-show">
+
+			<div class="show-text">
+				<p class="model-name pl-3"> <%= @model.first_name%> <%= @model.last_name %></p>
+				<div class="mt-5">
+					<p class="px-3"> <%= @model.description %> </p>
+			        <div class="bottom my-4">
+				        <div class="info-show d-flex justify-content-left">
+				        	<% if @model.height != "" %>
+				        		<p class="px-3">H <%= @model.height %> cm</p>
+				        	<% end %>
+				        	<% if @model.chest != "" %>
+				        		<p class="px-3">C <%= @model.chest %> cm</p>
+				        	<% end %>
+				        	<% if @model.waist != "" %>
+				        		<p class="px-3">W <%= @model.waist %> cm</p>
+				        	<% end %>
+				        	<% if @model.hips != "" %>
+				        		<p class="px-3">H <%= @model.hips %> cm</p>
+				        	<% end %>
+				        </div>
+				        <div class="info-show d-flex justify-content-left">
+				        	<% if @model.foot != "" %>
+				        		<p class="px-3">F <%= @model.foot %></p>
+				        	<% end %>
+				        	<% if @model.hair != "" %>
+				        		<p class="px-3">H <%= @model.hair %></p>
+				        	<% end %>
+				        	<% if @model.eye != "" %>
+				        		<p class="px-3">E <%= @model.eye %></p>
+				        	<% end %>
+				        </div>	
+			        </div>
+			     </div>
+
+			     <div class="contact px-3">
+			     	<p></p>
+			     	<a href = "mailto: <%= @model.email %>" class="login">MAIL</a>
+			     	<a href="<%= @model.instagram %>" class= "login ml-3">INSTAGRAM</a>
+			     	<% if user_signed_in? %>	     		
+				     	<%= link_to "EDIT",  edit_model_path(@model), class: "ml-3" %>
+			     	<% end %>
+			     </div>
+			</div>
+
+			<% @model.photos.each do |photo| %>
+			  		<%= cl_image_tag photo.key%>
+			<% end %>
+			<div> </div>
+
+		</div>
+
+	</div>
+
+</div>

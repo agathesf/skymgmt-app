@@ -1,0 +1,95 @@
+<%= simple_form_for @model do |f| %>
+
+	<div class="form-side form-left">
+		<%= link_to model_path(@model) do %>
+			<p><i class="fas fa-chevron-left pr-2"></i>annuler</p>
+		<% end %>
+
+
+		<h3>About</h3>
+		<%= f.input :first_name, placeholder: 'first name', label:false %>
+		<%= f.input :last_name, placeholder: 'last name', label:false %>
+
+		<div class="category-wrapper py-3">
+
+	        <div class="filter-btn category-item" data-children-count="1">
+	          <input type="radio" value="new faces" name="model[category]" id="category_new_faces" class="category-selector form-check-input radio_buttons required">
+	          <label class="form-check-label collection_radio_buttons" for="category_new_faces">
+	            <p>New Faces</p>
+	          </label>
+	        </div>
+
+	        <div class="filter-btn category-item" data-children-count="1">
+	          <input type="radio" value="talents" name="model[category]" id="category_talents" class="category-selector form-check-input radio_buttons required">
+	          <label class="form-check-label collection_radio_buttons" for="category_talents">
+	            <p>Talents</p>
+	          </label>
+	        </div>
+    
+  		</div>
+
+		<%= f.input :description, placeholder: 'Description', label:false, as: :text, input_html: {rows: 5} %>
+
+	  	<div class="d-flex py-2">  
+	  		<%= f.input :age, placeholder: '21', label: "YO" %>
+
+	  		<div class="category-wrapper">
+
+		        <div class="filter-btn category-item" data-children-count="1">
+		          <input type="radio" value="female" name="model[gender]" id="gender_female" class="category-selector form-check-input radio_buttons required">
+		          <label class="form-check-label collection_radio_buttons" for="gender_female">
+		            <p>Female</p>
+		          </label>
+		        </div>
+
+		        <div class="filter-btn category-item" data-children-count="1">
+		          <input type="radio" value="male" name="model[gender]" id="gender_male" class="category-selector form-check-input radio_buttons required">
+		          <label class="form-check-label collection_radio_buttons" for="gender_male">
+		            <p>Male</p>
+		          </label>
+		        </div>
+        
+      		</div>
+
+	  	</div>	
+
+		<%= f.input :role, placeholder: 'role : Model ? Actor ?', label:false %>
+
+		<%= f.input :based_in, placeholder: 'Paris', label:false %>
+
+  	</div>
+
+  	<div class="form-side form-right">
+
+		<h3>Mensurations</h3>
+		<div class="mesures">
+			<%= f.input :height, placeholder: 'height', label: "CM" %>
+			<%= f.input :chest, placeholder: 'chest', label: "CM" %>
+			<%= f.input :waist, placeholder: 'waist', label: "CM" %>
+			<%= f.input :hips, placeholder: 'hips', label: "CM" %>
+		</div>
+		<div class="carateristics">
+			<%= f.input :foot, placeholder: 'foot size', label:false %>
+			<%= f.input :hair, placeholder: 'hair color', label:false %>
+			<%= f.input :eye, placeholder: 'eye color', label:false %>
+		</div>
+
+		<h3>Contact</h3>
+		<%= f.input :email, placeholder: 'email', label:false %>
+		<%= f.input :instagram, placeholder: 'instagram link', label:false %>
+
+		<h3>Photos</h3>
+
+		<%= f.input :photos, as: :file, input_html: { multiple: true }, label:false %>
+		<div class="preview">
+			<ul>
+				<% @model.photos.each do |photo| %>
+					<li> <%= cl_image_tag photo.key, style: "height: 85vh" %> </li>
+				<% end %>
+			</ul>
+		</div>
+
+	  	<%= f.button :submit, value: "valider", class: "validate-model-btn" %>
+	</div>
+
+<% end %>

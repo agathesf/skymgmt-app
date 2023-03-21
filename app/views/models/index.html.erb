@@ -1,0 +1,83 @@
+<div class="container">
+	<div class="navbar py-2">
+		<h2>skymgmt</h2>
+		<%#= image_tag "logo.svg", alt: "skymgmt logo", class: "logo"%>
+		<div class="menu d-flex">
+			<div class="trigger mx-2">
+				<p class="menu-btn modal-btn" data-toggle="modal" data-target="#aboutModalCenter" id="about">about</p>
+				<p class="menu-btn modal-btn" data-toggle="modal" data-target="#indexModalCenter" id="index">index</p>
+			</div>
+			<div class="language">
+				<p class="menu-btn"><%= link_to 'fr', root_path(locale: :fr) %></p>
+				<p class="menu-btn"><%= link_to 'en', root_path(locale: :en) %></p>
+			</div>
+		</div>
+	</div>
+	<div class="cards">
+
+		<% @models.each do |model| %>
+		    <div class="card">
+
+    	    	<% if user_signed_in? %>
+    		    	<%= link_to destroy_path(model), style: "position: absolute; right: 0;", method: :delete, data: { confirm: "Are you sure?" } do %>
+    		    		<span class="delete hairline"></span>
+    		    	<% end %>
+    	    	<% end %>
+
+		    	<%= link_to model_path(model) do %>
+
+			    	<div class="background" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= cl_image_path model.photos.first.key if model.photos.first != nil %>'); background-position: center; background-size: cover">	
+
+				    	<div class="card-info">
+
+				    		<div class="top py-1">
+					    		<div class="info d-flex justify-content-center">
+					    			<p class="px-3"><%= model.category %></p>
+					    		</div>
+				    		</div>
+					        <h2> <%= model.first_name%> <%= model.last_name %></h2>
+					        <div class="bottom">
+						        <div class="info d-flex justify-content-center">
+						        	<% if model.height != "" %>
+						        		<p class="px-3">H <%= model.height %> cm</p>
+						        	<% end %>
+						        	<% if model.chest != "" %>
+						        		<p class="px-3">C <%= model.chest %> cm</p>
+						        	<% end %>
+						        	<% if model.waist != "" %>
+						        		<p class="px-3">W <%= model.waist %> cm</p>
+						        	<% end %>
+						        	<% if model.hips != "" %>
+						        		<p class="px-3">H <%= model.hips %> cm</p>
+						        	<% end %>
+						        </div>
+						        <div class="info d-flex justify-content-center">
+						        	<% if model.foot != "" %>
+						        		<p class="px-3">F <%= model.foot %></p>
+						        	<% end %>
+						        	<% if model.hair != "" %>
+						        		<p class="px-3">H <%= model.hair %></p>
+						        	<% end %>
+						        	<% if model.eye != "" %>
+						        		<p class="px-3">E <%= model.eye %></p>
+						        	<% end %>
+						        </div>	
+					        </div>
+				        </div>
+			        </div>
+
+			    <% end %>
+
+		    </div>
+		<% end %>
+
+		<% if user_signed_in? %>
+			<div class="card last-card">
+					<%= link_to new_model_path do %>
+					  <span class="add hairline"></span>
+					<% end %>
+			</div>
+		<% end %>
+	</div>
+
+</div>
