@@ -4,8 +4,9 @@
 		<%#= image_tag "logo.svg", alt: "skymgmt logo", class: "logo"%>
 		<div class="menu d-flex">
 			<div class="trigger mx-2">
-				<p class="menu-btn modal-btn" data-toggle="modal" data-target="#aboutModalCenter" id="about">about</p>
-				<p class="menu-btn modal-btn" data-toggle="modal" data-target="#indexModalCenter" id="index">index</p>
+
+				<p class="menu-btn modal-btn" data-bs-toggle="modal" data-bs-target="#aboutModalCenter" id="about">about</p>
+				<p class="menu-btn modal-btn" data-bs-toggle="modal" data-bs-target="#indexModalCenter" id="index">index</p>
 			</div>
 			<div class="language">
 				<p class="menu-btn"><%= link_to 'fr', root_path(locale: :fr) %></p>
