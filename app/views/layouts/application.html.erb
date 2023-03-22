@@ -10,7 +10,7 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body style=" <%= 'width: 100vw; overflow-x: hidden;' if params[:action] == 'index'%>">
+  <body data-controller="cursor" style=" <%= 'width: 100vw; overflow-x: hidden;' if params[:action] == 'index'%>">
     <%= render 'shared/header' %>
     <%= yield %>
     <%= render 'shared/footer' %>

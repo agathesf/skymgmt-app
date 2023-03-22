@@ -21,30 +21,38 @@ $headers-font: "Nunito", "Helvetica", "sans-serif";
 // $my-font: "Font Name";
 
 @font-face {
-    font-family: 'FuturaClassicNormal';
-    src: url('FuturaClassicNormal.eot');
-    src: url('FuturaClassicNormal.eot?#iefix') format('embedded-opentype'),
-        url('FuturaClassicNormal.woff2') format('woff2'),
-        url('FuturaClassicNormal.woff') format('woff'),
-        url('FuturaClassicNormal.ttf') format('truetype'),
-        url('FuturaClassicNormal.svg#FuturaClassicNormal') format('svg');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'Akzidenz-Grotesk BQ';    
+  // No need any embeded Ruby code here
+  src: url('AkzidenzGroteskBQ-LigExt.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Akzidenz-Grotesk BQ';
-    src: url('AkzidenzGroteskBQ-LigExt.eot');
-    src: url('AkzidenzGroteskBQ-LigExt.eot?#iefix') format('embedded-opentype'),
-        url('AkzidenzGroteskBQ-LigExt.woff2') format('woff2'),
-        url('AkzidenzGroteskBQ-LigExt.woff') format('woff'),
-        url('AkzidenzGroteskBQ-LigExt.ttf') format('truetype'),
-        url('AkzidenzGroteskBQ-LigExt.svg#AkzidenzGroteskBQ-LigExt') format('svg');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'FuturaClassicNormal';    
+  // No need any embeded Ruby code here
+  src: url('FuturaClassicNormal.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
+$my-font: "Akzidenz-Grotesk BQ";
+
+// @font-face {
+//     font-family: 'FuturaClassicNormal';
+//     src: url('FuturaClassicNormal.woff');
+//     font-weight: normal;
+//     font-style: normal;
+//     font-display: swap;
+// }
+
+// @font-face {
+//     font-family: 'Akzidenz-Grotesk BQ';
+//     src: url('AkzidenzGroteskBQ-LigExt.woff');
+//     font-weight: 300;
+//     font-style: normal;
+//     font-display: swap;
+// }
+
 $font-logo: 'FuturaClassicNormal';
-$my-font: "Akzidenz-Grotesk BQ", "Syncopate";
+// $my-font: "Akzidenz-Grotesk-LigExt";
