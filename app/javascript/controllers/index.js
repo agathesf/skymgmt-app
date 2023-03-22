@@ -12,3 +12,6 @@ application.register("cursor", CursorController)
 
 import ModalController from "./modal_controller"
 application.register("modal", ModalController)
+
+import PreviewController from "./preview_controller"
+application.register("preview", PreviewController)
