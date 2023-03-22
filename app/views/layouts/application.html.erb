@@ -11,12 +11,14 @@
   </head>
 
   <body data-controller="cursor" style=" <%= 'width: 100vw; overflow-x: hidden;' if params[:action] == 'index'%>">
-    <%= render 'shared/header' %>
-    <%= yield %>
-    <%= render 'shared/footer' %>
-    <% if params[:action] == 'index' %>
-      <%= render 'shared/modal' %>
-    <% end %>
+    <div data-controller="modal">    
+      <%= render 'shared/header' %>
+      <%= yield %>
+      <%= render 'shared/footer' %>
+      <% if params[:action] == 'index' %>
+        <%= render 'shared/modal' %>
+      <% end %>
+    </div>
   </body>
 
   <div class="cursor-dot-outline"></div>

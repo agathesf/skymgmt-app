@@ -9,3 +9,6 @@ application.register("hello", HelloController)
 
 import CursorController from "./cursor_controller"
 application.register("cursor", CursorController)
+
+import ModalController from "./modal_controller"
+application.register("modal", ModalController)
